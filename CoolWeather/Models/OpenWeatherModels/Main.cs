@@ -1,4 +1,4 @@
-﻿namespace CoolWeather.Models
+﻿namespace CoolWeather.Models.OpenWeatherModels
 {
     public class Main
     {
@@ -12,4 +12,4 @@
 }
 
 
-}
+

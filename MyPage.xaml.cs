@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace CoolWeather
+namespace Application
 {
-    public partial class MainPage : ContentPage
+    public partial class MyPage : ContentPage
     {
-        public MainPage()
+        public MyPage()
         {
             InitializeComponent();
         }
