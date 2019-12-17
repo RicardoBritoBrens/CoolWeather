@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="CoolWeather.Views.MainWeatherPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <CollectionView BackgroundColor="Blue"
+            Margin="0,20"
+            HeightRequest="100"
+            VerticalOptions="End">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="15" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                    <x:String>80</x:String>
+                    <x:String>100</x:String>
+                    <x:String>70</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10" BackgroundColor="DarkOrange">
+                        <Frame>
+                        <StackLayout>
+                            <Label Text="UV" HorizontalOptions="Center" />
+                            <Label Text="{Binding .}" HorizontalOptions="Center" />
+                        </StackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="CoolWeather.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ColdStartColor">#bce1fc</Color>
+            <Color x:Key="ColdEndColor">#a7cbfd</Color>
+            <Color x:Key="WarmStartColor">#f6ca69</Color>
+            <Color x:Key="WarmEndColor">#fca97f</Color>
+            <Color x:Key="NightStartColor">#1a2d47</Color>
+            <Color x:Key="NightEndColor">#365876</Color>
+            <Color x:Key="NormalTextColor">Blue</Color>
+            <Color x:Key="MainTextColor">White</Color>
+            <Style x:Key="LabelTemperatureStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="100" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="TextColor" Value="{StaticResource MainTextColor}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
