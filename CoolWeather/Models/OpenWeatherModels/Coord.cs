@@ -1,4 +1,4 @@
-﻿namespace CoolWeather.Models.OpenWeatherModels
+﻿namespace CoolWeather.Models
 {
     public class Coord
     {
@@ -8,4 +8,4 @@
 }
 
 
-
+}

@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using CoolWeather.Views;
+
 namespace CoolWeather
 {
     public partial class App : Application
