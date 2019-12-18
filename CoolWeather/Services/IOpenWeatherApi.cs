@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CoolWeather.Models.OpenWeatherModels;
 using Refit;
 
 namespace CoolWeather.Services
@@ -13,10 +14,10 @@ namespace CoolWeather.Services
         /// </summary>
         /// <returns></returns>
         [Get("/data/2.5/weather?q={cityname}&APPID=2ea0f55a684ffc85aafee4ce127480fd")]
-        Task<string> GetWeatherByCityName(string cityname);
+        Task<OpenWeatherItem> GetWeatherByCityName(string cityname);
 
         [Get("/data/2.5/weather?q={cityname},{countrycode}&APPID=2ea0f55a684ffc85aafee4ce127480fd")]
-        Task<string> GetWeatherByCityNameAndCountryCode(string cityname, int countrycode);
+        Task<OpenWeatherItem> GetWeatherByCityNameAndCountryCode(string cityname, int countrycode);
 
     }
 }
