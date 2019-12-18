@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 using CoolWeather.Views;
 namespace CoolWeather
 {
@@ -10,7 +8,7 @@ namespace CoolWeather
         {
             InitializeComponent();
 
-            MainPage = new MyPage();
+            MainPage = new MainWeatherPage();
         }
 
         protected override void OnStart()
