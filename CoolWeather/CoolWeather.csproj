@@ -18,9 +18,20 @@
     <Folder Include="Models\" />
     <Folder Include="Models\OpenWeatherModels\" />
     <Folder Include="Services\" />
-    <Folder Include="AdditionalFiles\" />
+    <Folder Include="ExtraFiles\" />
+    <Folder Include="Models\OpenWeatherModels\CurrentWeather\" />
+    <Folder Include="Models\OpenWeatherModels\ForecastWeather\" />
+    <Folder Include="Models\OpenWeatherModels\CityWeather\" />
+    <Folder Include="Services\Repository\" />
+    <Folder Include="Services\Navigation\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ExtraFiles\city_list.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExtraFiles\city_list.json" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CoolWeather.Services;
 using Refit;
 using Xamarin.Forms;
@@ -23,9 +21,14 @@ namespace CoolWeather.Views
 
         async Task CallApi()
         {
+            //var apiResponse = RestService.For<IOpenWeatherApi>("https://api.openweathermap.org");
+
+            //var testWeather = await apiResponse.GetCurrentWeatherItemByCityName("London");                                                           
+
             var apiResponse = RestService.For<IOpenWeatherApi>("https://api.openweathermap.org");
 
-            var testWeather = await apiResponse.GetWeatherByCityName("London");
+            var testWeather = await apiResponse.GetHourlyWeatherItemByCityName("Dominican Republic");
+
             
         }
     }

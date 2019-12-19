@@ -107,6 +107,7 @@
                             <Frame>
                                 <StackLayout>
                                     <Label Text="{Binding Name}" HorizontalOptions="Center" />
+                                    <Image Source=""></Image>
                                     <Label Text="{Binding Value}" HorizontalOptions="Center" />
                                 </StackLayout>
                             </Frame>
