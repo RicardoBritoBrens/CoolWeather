@@ -4,6 +4,8 @@ using System.IO;
 using System.Reflection;
 using CoolWeather.Models.OpenWeatherModels.CityWeather;
 using Newtonsoft.Json;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CoolWeather.Services.Repository
 {
@@ -14,22 +16,34 @@ namespace CoolWeather.Services.Repository
         {
         }
 
-        public ObservableCollection<CityWeatherItem> GetAllCities()
+        public Task<ObservableCollection<CityWeatherItem>> GetAllCities()
         {
-            Assembly assembly = Assembly.GetExecutingAssembly();
+            Task<ObservableCollection<CityWeatherItem>> taskResukt;
 
-            Stream stream = assembly.GetManifestResourceStream(ResourceIdEmbeddedJSONFile);
-
-            string text = string.Empty;
-
-            using (var reader = new StreamReader(stream))
+            taskResukt = Task.Run(() =>
             {
-                text = reader.ReadToEnd();
-            }
 
-            IEnumerable<CityWeatherItem> localListOfCities = JsonConvert.DeserializeObject<IEnumerable<CityWeatherItem>>(text);
+                Assembly assembly = Assembly.GetExecutingAssembly();
 
-            return new ObservableCollection<CityWeatherItem>(localListOfCities);
+                Stream stream = assembly.GetManifestResourceStream(ResourceIdEmbeddedJSONFile);
+
+                string text = string.Empty;
+
+                using (var reader = new StreamReader(stream))
+                {
+                    text = reader.ReadToEnd();
+                }
+
+                IEnumerable<CityWeatherItem> localListOfCities = JsonConvert.DeserializeObject<IEnumerable<CityWeatherItem>>(text);
+
+                return
+                    new ObservableCollection<CityWeatherItem>(
+                        localListOfCities
+                    .OrderBy(x => x.Name)
+                    .Where(x => !x.Name.Contains(".") && !x.Name.Contains("-") && !string.IsNullOrWhiteSpace(x.Name)));
+            });
+
+            return taskResukt;
         }
     }
-}
+} 

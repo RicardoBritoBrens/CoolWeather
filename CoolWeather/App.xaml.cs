@@ -8,7 +8,9 @@ namespace CoolWeather
         {
             InitializeComponent();
 
-            MainPage = new MainWeatherPage();
+            MainPage = new NavigationPage(new StartMainPage());
+            // TODO: FIND A WAY TO SHOW A ACTIVITY INDICATOR WAY IS LOADING
+            // TODO: ADD PROPER FORMAT FOR THE PRINCIPAL LIST OF CITIES
         }
 
         protected override void OnStart()

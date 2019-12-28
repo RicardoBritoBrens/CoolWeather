@@ -2,10 +2,13 @@
 <ContentPage
     x:Class="CoolWeather.Views.MainWeatherPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Viewmodel="clr-namespace:CoolWeather.ViewModels"
     xmlns:converters="clr-namespace:CoolWeather.Converters"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:model="clr-namespace:CoolWeather.Models" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:Viewmodel="clr-namespace:CoolWeather.ViewModels">
+    xmlns:model="clr-namespace:CoolWeather.Models"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
     <ContentPage.BindingContext>
-        <Viewmodel:WeatherViewModel Temp="-100" />
+        <Viewmodel:MainWeatherViewModel Temp="-100" />
     </ContentPage.BindingContext>
     <pancake:PancakeView BackgroundGradientEndColor="{Binding Temp, Converter={converters:BackgroundColorConverter IsStart=False}}" BackgroundGradientStartColor="{Binding Temp, Converter={converters:BackgroundColorConverter IsStart=True}}">
         <Grid Padding="{OnPlatform Android='0,24,0,0', iOS='0,44,0,0'}" RowSpacing="0">
@@ -81,36 +84,38 @@
                 Grid.Row="5"
                 Grid.Column="1"
                 Margin="0,10"
-                HeightRequest="80"
+                HeightRequest="100"
                 VerticalOptions="Center">
-
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="12" Orientation="Horizontal" />
+                    <LinearItemsLayout ItemSpacing="25" Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type model:DataItem}">
-                        <model:DataItem Name="Pressure" Value="10"></model:DataItem>
-                        <model:DataItem Name="UV Index" Value="3"></model:DataItem>
-                        <model:DataItem Name="Wind Speed" Value="0"></model:DataItem>
-                        <model:DataItem Name="Humidity" Value="65"></model:DataItem>
-                        <model:DataItem Name="Min Temp" Value="50"></model:DataItem>
-                        <model:DataItem Name="Max Temp" Value="80"></model:DataItem>
+                        <model:DataItem Name="Pressure" Value="10" />
+                        <model:DataItem Name="UV Index" Value="3" />
+                        <model:DataItem Name="Wind Speed" Value="0" />
+                        <model:DataItem Name="Humidity" Value="65" />
+                        <model:DataItem Name="Min Temp" Value="50" />
+                        <model:DataItem Name="Max Temp" Value="80" />
                     </x:Array>
                 </CollectionView.ItemsSource>
 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <pancake:PancakeView BackgroundGradientAngle="20"
-                                             Padding="0"
-                                             BackgroundColor="DarkOrange">
-                            <Frame>
-                                <StackLayout>
-                                    <Label Text="{Binding Name}" HorizontalOptions="Center" />
-                                    <Image Source=""></Image>
-                                    <Label Text="{Binding Value}" HorizontalOptions="Center" />
-                                </StackLayout>
-                            </Frame>
+                    <DataTemplate>                                                                                 
+                        <pancake:PancakeView
+                            BackgroundGradientAngle="45"
+                            HorizontalOptions="FillAndExpand"
+                            HeightRequest="150"
+                            CornerRadius="10"
+                            Padding="0"
+                            BackgroundColor="DarkOrange"
+                            BorderGradientAngle="5">                            
+                            <StackLayout>
+                                <Label Text="{Binding Name}" HorizontalOptions="Center" />
+                                <Image Source="" />
+                                <Label Text="{Binding Value}" HorizontalOptions="Center" />
+                            </StackLayout>
                         </pancake:PancakeView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

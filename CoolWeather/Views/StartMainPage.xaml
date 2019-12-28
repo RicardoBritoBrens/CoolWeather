@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="CoolWeather.Views.StartMainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:CoolWeather.Models.OpenWeatherModels.CityWeather"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:viewmodel="clr-namespace:CoolWeather.ViewModels">
+    <ContentPage.Content>
+        <StackLayout>
+         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HeightRequest="40" WidthRequest="40" Color ="Red" VerticalOptions="Start" HorizontalOptions="Center"/>
+            <CollectionView ItemsSource="{Binding Cities}">
+
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical"
+                        ItemSpacing="50"/>
+                </CollectionView.ItemsLayout>
+
+                <!--<CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type model:CityWeatherItem}">
+                        <model:CityWeatherItem Name="Pressure" />
+                        <model:CityWeatherItem Name="UV Index" />
+                        <model:CityWeatherItem Name="Wind Speed" />
+                        <model:CityWeatherItem Name="Humidity" />
+                        <model:CityWeatherItem Name="Min Temp" />
+                        <model:CityWeatherItem Name="Max Temp" />
+                        <model:CityWeatherItem Name="Pressure" />
+                        <model:CityWeatherItem Name="UV Index" />
+                        <model:CityWeatherItem Name="Wind Speed" />
+                        <model:CityWeatherItem Name="Humidity" />
+                        <model:CityWeatherItem Name="Min Temp" />
+                        <model:CityWeatherItem Name="Max Temp" />
+                        <model:CityWeatherItem Name="Pressure" />
+                        <model:CityWeatherItem Name="UV Index" />
+                        <model:CityWeatherItem Name="Wind Speed" />
+                        <model:CityWeatherItem Name="Humidity" />
+                        <model:CityWeatherItem Name="Min Temp" />
+                        <model:CityWeatherItem Name="Max Temp" />
+                    </x:Array>
+                </CollectionView.ItemsSource>-->
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <pancake:PancakeView
+                            Padding="10"
+                            WidthRequest="120"
+                            HeightRequest="120"
+                            BackgroundGradientAngle="15"
+                            BackgroundGradientEndColor="#83a4d4"
+                            BackgroundGradientStartColor="#b6fbff"
+                            BorderColor="AliceBlue"
+                            BorderIsDashed="True"
+                            CornerRadius="0,80,80,0"
+                            HasShadow="True"
+                            VerticalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal" Spacing="50">
+                                <Image
+                                    Source="DefaultWeather.png"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand"></Image>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding Name}"
+                                    TextColor="White"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </pancake:PancakeView>
+                        <!--TODO:
+                        ADD SEARCH BAR-->
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
