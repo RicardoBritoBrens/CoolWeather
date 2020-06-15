@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="CoolWeather.Views.OptionWeatherPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    Title="WeatherOptions"
+    NavigationPage.HasNavigationBar="False"
+    Visual="Material">
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Style x:Key="LabelOptionWeatherPageStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="20" />
+            </Style>
+
+            <Style x:Key="ImageOptionWeatherGeneralStyle" TargetType="Image">
+                <Setter Property="WidthRequest" Value="25" />
+                <Setter Property="HeightRequest" Value="200" />
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+
+            <Style x:Key="BackgroundImageOptionWeatherPage" TargetType="Image">
+                <Setter Property="Source" Value="BackgroundImage.jpeg" />
+                <Setter Property="Aspect" Value="AspectFill" />
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <AbsoluteLayout>
+            <Image
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Style="{StaticResource BackgroundImageOptionWeatherPage}" />
+            <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.5,0.8,0.9" AbsoluteLayout.LayoutFlags="All">
+                <Frame>
+                    <StackLayout>
+                        <Image Source="{Binding CitiesImageSource}" Style="{StaticResource ImageOptionWeatherGeneralStyle}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="PickCityElementTapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Style="{StaticResource LabelOptionWeatherPageStyle}" Text="Pick a Cities" />
+                    </StackLayout>
+                </Frame>
+                <Frame>
+                    <StackLayout>
+                        <Image Source="{Binding CurretCitySourceImage}" Style="{StaticResource ImageOptionWeatherGeneralStyle}">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CurrentLocationTapped" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Label Style="{StaticResource LabelOptionWeatherPageStyle}" Text="Current Weather" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

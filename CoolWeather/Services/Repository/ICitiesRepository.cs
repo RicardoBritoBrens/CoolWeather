@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using CoolWeather.Models.OpenWeatherModels.CityWeather;
 
-namespace CoolWeather.Services
+namespace CoolWeather.Services.Repository
 {
     public interface ICitiesRepository
     {
