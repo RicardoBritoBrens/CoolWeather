@@ -51,8 +51,6 @@ namespace CoolWeather.ViewModels
 
         private async Task GetCities()
         {
-            // TODO: IMPROVE THIS USE OF THE PROPERTY IsBusy to invert the
-            // Boolean value a get sense by the name of the variable.
             IsBusy = true;
             Cities = await _citiesRepository.GetAllCities();
 

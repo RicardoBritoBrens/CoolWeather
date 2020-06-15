@@ -14,7 +14,7 @@ namespace CoolWeather.Services.Repository
         {
             Task<ObservableCollection<CityWeatherItem>> taskResukt = Task.Run(() =>
              {
-                 string text = Utils.ReadEmbedddedJsonFile();
+                 string text = Utils.ReadEmbeddedJsonFile();
 
                  var localListOfCities = JsonConvert.DeserializeObject<IEnumerable<CityWeatherItem>>(text);
 

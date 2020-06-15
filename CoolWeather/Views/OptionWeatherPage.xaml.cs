@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CoolWeather.Services.Navigation;
 using CoolWeather.ViewModels;
 using Xamarin.Forms;
 
