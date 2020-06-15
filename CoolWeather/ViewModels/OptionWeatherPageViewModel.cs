@@ -32,7 +32,7 @@ namespace CoolWeather.ViewModels
         }
 
         public ICommand CallCurrentLocationPageCommand { get; set; }
-        public ICommand CallPickCityPageCommand { get; internal set; }
+        public ICommand CallPickCityPageCommand { get; set; }
 
         public OptionWeatherPageViewModel(IPageService pageService)
         {
@@ -40,14 +40,15 @@ namespace CoolWeather.ViewModels
             CitiesImageSource = "PickYourCity.jpg";
             CurretCitySourceImage = "CurrentLocation.jpg";
             CallCurrentLocationPageCommand = new Command(CallCurrentLocationPage);
+            CallPickCityPageCommand = new Command(CallPickCityPage);
         }
         public void CallCurrentLocationPage()
         {
-            Console.WriteLine();
+            _pageService.PushAsync(new MainWeatherPage());
         }
         public void CallPickCityPage()
         {
-            Console.WriteLine();
+            _pageService.PushAsync(new StartMainPage());
         }
     }
 }

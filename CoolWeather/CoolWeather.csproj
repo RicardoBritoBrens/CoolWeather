@@ -22,11 +22,11 @@
     <Folder Include="Models\OpenWeatherModels\CurrentWeather\" />
     <Folder Include="Models\OpenWeatherModels\ForecastWeather\" />
     <Folder Include="Models\OpenWeatherModels\CityWeather\" />
-    <Folder Include="Services\Repository\" />
-    <Folder Include="Services\Navigation\" />
     <Folder Include="Extra\" />
     <Folder Include="Extra\Converters\" />
     <Folder Include="Models\MockModels\" />
+    <Folder Include="Extra\Navigation\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />
