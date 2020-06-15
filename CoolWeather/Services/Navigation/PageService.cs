@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace CoolWeather.ViewModels
+namespace CoolWeather.Services.Navigation
 {
     public class PageService : IPageService
     {

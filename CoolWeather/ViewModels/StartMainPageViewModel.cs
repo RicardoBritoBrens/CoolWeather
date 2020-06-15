@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CoolWeather.Models.OpenWeatherModels.CityWeather;
-using CoolWeather.Services;
+using CoolWeather.Services.Navigation;
 using CoolWeather.Services.Repository;
-using CoolWeather.Views;
 using Xamarin.Forms;
 
 namespace CoolWeather.ViewModels
 {
-    public class StartMainPageViewModel: ViewModelBase
+    public class StartMainPageViewModel : ViewModelBase
     {
 
         private IPageService _pageService;
-        private ICitiesRepository _citiesRepository;        
+        private ICitiesRepository _citiesRepository;
         private bool _enableActivity { get; set; }
 
         public ICommand GetCitiesCommand { get; set; }
@@ -46,7 +44,7 @@ namespace CoolWeather.ViewModels
             _pageService = pageService;
             _citiesRepository = new CitiesRepository();
             Cities = new ObservableCollection<CityWeatherItem>();
-            GetCitiesCommand = new Command(async ()=> await GetCities());
+            GetCitiesCommand = new Command(async () => await GetCities());
             IsBusy = true;
             EnableActivity = false;
         }
@@ -56,8 +54,8 @@ namespace CoolWeather.ViewModels
             // TODO: IMPROVE THIS USE OF THE PROPERTY IsBusy to invert the
             // Boolean value a get sense by the name of the variable.
             IsBusy = true;
-            Cities =  await _citiesRepository.GetAllCities();
-           
+            Cities = await _citiesRepository.GetAllCities();
+
             if (Cities.Count > 0)
             {
                 IsBusy = false;

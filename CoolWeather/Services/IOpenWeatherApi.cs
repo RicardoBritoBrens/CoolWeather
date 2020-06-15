@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using CoolWeather.Models.OpenWeatherModels;
 using CoolWeather.Models.OpenWeatherModels.ForecastWeather;
 using Refit;
@@ -13,7 +12,6 @@ namespace CoolWeather.Services
         /// Sample: api.openweathermap.org/data/2.5/weather?q={city name}
         /// Sample: api.openweathermap.org/data/2.5/weather?q={city name},{country code}
         /// </summary>
-        /// <returns></returns>
         [Get("/data/2.5/weather?q={cityname}&APPID=2ea0f55a684ffc85aafee4ce127480fd")]
         Task<OpenWeatherItem> GetCurrentWeatherItemByCityName(string cityname);
 

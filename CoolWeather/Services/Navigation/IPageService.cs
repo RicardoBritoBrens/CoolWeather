@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace CoolWeather.ViewModels
+namespace CoolWeather.Services.Navigation
 {
     public interface IPageService
     {
@@ -13,6 +13,6 @@ namespace CoolWeather.ViewModels
 
         Task<bool> DisplayAlert(string title, string message, string ok, string cancel);
 
-        Task DisplayAlert(string title, string message, string ok);        
+        Task DisplayAlert(string title, string message, string ok);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using CoolWeather.Services;
+using CoolWeather.ViewModels;
 using Refit;
 using Xamarin.Forms;
 
@@ -10,9 +11,25 @@ namespace CoolWeather.Views
         public MainWeatherPage()
         {
             InitializeComponent();
-            // TODO: Add all additional classes and interfaces to handle in the right way http request to the OpenWeather API
-            // TODO: Complete the Look and feel of the MainWeatherPage
+
+            /*
+             * 
+            var pageService = new PageService();
+            ViewModel = new MainWeatherViewModel(pageService);
+            */
+
+
         }
+
+        public OptionWeatherPageViewModel ViewModel
+        {
+            get => (BindingContext as OptionWeatherPageViewModel);
+            set
+            {
+                BindingContext = value;
+            }
+        }
+
         protected async override void OnAppearing()
         {
             base.OnAppearing();

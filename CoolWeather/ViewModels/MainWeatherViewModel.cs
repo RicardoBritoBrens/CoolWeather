@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using CoolWeather.Models.OpenWeatherModels.CityWeather;
-using CoolWeather.Views;
+﻿using CoolWeather.Services.Navigation;
 
 namespace CoolWeather.ViewModels
 {
-    public class MainWeatherViewModel: ViewModelBase
-    {        
+    public class MainWeatherViewModel : ViewModelBase
+    {
         public int Temp
         {
             get => _temp;
@@ -18,14 +14,20 @@ namespace CoolWeather.ViewModels
             }
         }
         public int _temp { get; set; }
-        public MainWeatherViewModel()
-        {
-
-        }
-
         public MainWeatherViewModel(int temp)
         {
             Temp = temp;
         }
+        private IPageService _pageService;
+        public MainWeatherViewModel()
+        {
+
+        }
+        public MainWeatherViewModel(IPageService pageService)
+        {
+            _pageService = pageService;
+        }
+
+
     }
 }

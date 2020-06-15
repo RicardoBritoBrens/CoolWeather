@@ -69,6 +69,7 @@
                                     VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </pancake:PancakeView>
+
                         <!--TODO:
                         ADD SEARCH BAR-->
                     </DataTemplate>
