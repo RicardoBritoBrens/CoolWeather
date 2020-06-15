@@ -4,7 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Viewmodel="clr-namespace:CoolWeather.ViewModels"
-    xmlns:converters="clr-namespace:CoolWeather.Converters"
+    xmlns:converters="clr-namespace:CoolWeather.Extra.Converters"
+    xmlns:mockModels="clr-namespace:CoolWeather.Models.MockModels"
     xmlns:model="clr-namespace:CoolWeather.Models"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
     <ContentPage.BindingContext>
@@ -29,19 +30,19 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 FontSize="Large"
+                HorizontalOptions="Center"
                 Text="República Dominicana"
                 TextColor="{StaticResource MainTextColor}"
-                HorizontalOptions="Center"
                 VerticalOptions="Center" />
             <Image
                 Grid.Row="1"
                 Grid.Column="1"
-                WidthRequest="300"
                 HeightRequest="300"
+                HorizontalOptions="FillAndExpand"
                 Opacity=".9"
                 Source="puertadelconde.png"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand" />
+                VerticalOptions="FillAndExpand"
+                WidthRequest="300" />
             <Grid
                 Grid.Row="2"
                 Grid.Column="1"
@@ -60,25 +61,25 @@
                 <Label
                     Grid.Row="0"
                     Grid.Column="2"
+                    HorizontalOptions="Start"
                     Style="{StaticResource LabelTemperatureStyle}"
-                    Text="°"
-                    HorizontalOptions="Start" />
+                    Text="°" />
             </Grid>
 
             <Label
                 Grid.Row="3"
                 Grid.Column="1"
                 FontSize="Large"
+                HorizontalOptions="Center"
                 Text="Sunny"
-                TextColor="{StaticResource MainTextColor}"
-                HorizontalOptions="Center" />
+                TextColor="{StaticResource MainTextColor}" />
             <Label
                 Grid.Row="4"
                 Grid.Column="1"
                 FontSize="Small"
+                HorizontalOptions="Center"
                 Text="Sunday, December 14"
-                TextColor="{StaticResource MainTextColor}"
-                HorizontalOptions="Center" />
+                TextColor="{StaticResource MainTextColor}" />
 
             <CollectionView
                 Grid.Row="5"
@@ -91,30 +92,30 @@
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type model:DataItem}">
-                        <model:DataItem Name="Pressure" Value="10" />
-                        <model:DataItem Name="UV Index" Value="3" />
-                        <model:DataItem Name="Wind Speed" Value="0" />
-                        <model:DataItem Name="Humidity" Value="65" />
-                        <model:DataItem Name="Min Temp" Value="50" />
-                        <model:DataItem Name="Max Temp" Value="80" />
+                    <x:Array Type="{x:Type mockModels:DataItem}">
+                        <mockModels:DataItem Name="Pressure" Value="10" />
+                        <mockModels:DataItem Name="UV Index" Value="3" />
+                        <mockModels:DataItem Name="Wind Speed" Value="0" />
+                        <mockModels:DataItem Name="Humidity" Value="65" />
+                        <mockModels:DataItem Name="Min Temp" Value="50" />
+                        <mockModels:DataItem Name="Max Temp" Value="80" />
                     </x:Array>
                 </CollectionView.ItemsSource>
 
                 <CollectionView.ItemTemplate>
-                    <DataTemplate>                                                                                 
+                    <DataTemplate>
                         <pancake:PancakeView
-                            BackgroundGradientAngle="45"
-                            HorizontalOptions="FillAndExpand"
-                            HeightRequest="150"
-                            CornerRadius="10"
                             Padding="0"
                             BackgroundColor="DarkOrange"
-                            BorderGradientAngle="5">                            
+                            BackgroundGradientAngle="45"
+                            BorderGradientAngle="5"
+                            CornerRadius="10"
+                            HeightRequest="150"
+                            HorizontalOptions="FillAndExpand">
                             <StackLayout>
-                                <Label Text="{Binding Name}" HorizontalOptions="Center" />
+                                <Label HorizontalOptions="Center" Text="{Binding Name}" />
                                 <Image Source="" />
-                                <Label Text="{Binding Value}" HorizontalOptions="Center" />
+                                <Label HorizontalOptions="Center" Text="{Binding Value}" />
                             </StackLayout>
                         </pancake:PancakeView>
                     </DataTemplate>
