@@ -1,24 +1,39 @@
-﻿using CoolWeather.Services.Navigation;
+﻿using System.Windows.Input;
+using CoolWeather.Services.Navigation;
+using CoolWeather.Views;
+using Xamarin.Forms;
 
 namespace CoolWeather.ViewModels
 {
     public class MainWeatherViewModel : ViewModelBase
     {
-        public int Temp
+        private IPageService _pageService;
+        private string _cityImageSource { get; set; }
+        private string _curretCitySourceImage { get; set; }
+
+        public string CitiesImageSource
         {
-            get => _temp;
+            get => _cityImageSource;
             set
             {
-                _temp = value;
+                _cityImageSource = value;
                 OnPropertyChanged();
             }
         }
-        public int _temp { get; set; }
-        public MainWeatherViewModel(int temp)
+        public string CurretCitySourceImage
         {
-            Temp = temp;
+            get => _curretCitySourceImage;
+            set
+            {
+                _curretCitySourceImage = value;
+                OnPropertyChanged();
+            }
         }
-        private IPageService _pageService;
+
+        public ICommand CallCurrentLocationPageCommand { get; set; }
+        public ICommand CallPickCityPageCommand { get; set; }
+
+
         public MainWeatherViewModel()
         {
 
@@ -26,8 +41,20 @@ namespace CoolWeather.ViewModels
         public MainWeatherViewModel(IPageService pageService)
         {
             _pageService = pageService;
+            CitiesImageSource = "PickYourCity.jpg";
+            CurretCitySourceImage = "CurrentLocation.jpg";
+            CallCurrentLocationPageCommand = new Command(CallCurrentLocationPage);
+            CallPickCityPageCommand = new Command(CallPickCityPage);
         }
-
-
+        public void CallCurrentLocationPage()
+        {
+            _pageService.PushAsync(new CurrentWeatherPage());
+        }
+        public void CallPickCityPage()
+        {
+            _pageService.PushAsync(new PickCityWeatherPage());
+        }
     }
 }
+
+

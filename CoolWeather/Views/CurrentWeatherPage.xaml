@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="CoolWeather.Views.StartMainPage"
+    x:Class="CoolWeather.Views.CurrentWeatherPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:CoolWeather.Models.OpenWeatherModels.CityWeather"
@@ -8,13 +8,18 @@
     xmlns:viewmodel="clr-namespace:CoolWeather.ViewModels">
     <ContentPage.Content>
         <StackLayout>
-         <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" HeightRequest="40" WidthRequest="40" Color ="Red" VerticalOptions="Start" HorizontalOptions="Center"/>
+            <!--<ActivityIndicator
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsBusy}"
+                IsVisible="{Binding IsBusy}"
+                VerticalOptions="Start"
+                WidthRequest="40"
+                Color="Red" />-->
             <CollectionView ItemsSource="{Binding Cities}">
 
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout
-                        Orientation="Vertical"
-                        ItemSpacing="50"/>
+                    <LinearItemsLayout ItemSpacing="50" Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
 
                 <!--<CollectionView.ItemsSource>
@@ -45,8 +50,6 @@
 
                         <pancake:PancakeView
                             Padding="10"
-                            WidthRequest="120"
-                            HeightRequest="120"
                             BackgroundGradientAngle="15"
                             BackgroundGradientEndColor="#83a4d4"
                             BackgroundGradientStartColor="#b6fbff"
@@ -54,24 +57,29 @@
                             BorderIsDashed="True"
                             CornerRadius="0,80,80,0"
                             HasShadow="True"
-                            VerticalOptions="CenterAndExpand">
+                            HeightRequest="120"
+                            VerticalOptions="CenterAndExpand"
+                            WidthRequest="120">
                             <StackLayout Orientation="Horizontal" Spacing="50">
                                 <Image
-                                    Source="DefaultWeather.png"
                                     HorizontalOptions="Center"
-                                    VerticalOptions="CenterAndExpand"></Image>
+                                    Source="DefaultWeather.png"
+                                    VerticalOptions="CenterAndExpand" />
                                 <Label
                                     FontAttributes="Bold"
                                     FontSize="Large"
+                                    HorizontalOptions="Center"
                                     Text="{Binding Name}"
                                     TextColor="White"
-                                    HorizontalOptions="Center"
                                     VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </pancake:PancakeView>
 
-                        <!--TODO:
-                        ADD SEARCH BAR-->
+                        <!--
+                            TODO:
+                            ADD SEARCH BAR
+                        -->
+
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
 

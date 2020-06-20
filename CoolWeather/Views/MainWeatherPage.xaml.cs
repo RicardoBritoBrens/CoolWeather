@@ -1,7 +1,6 @@
-﻿using System.Threading.Tasks;
-using CoolWeather.Services;
+﻿using System;
+using CoolWeather.Services.Navigation;
 using CoolWeather.ViewModels;
-using Refit;
 using Xamarin.Forms;
 
 namespace CoolWeather.Views
@@ -12,41 +11,29 @@ namespace CoolWeather.Views
         {
             InitializeComponent();
 
-            /*
-             * 
             var pageService = new PageService();
             ViewModel = new MainWeatherViewModel(pageService);
-            */
-
 
         }
 
-        public OptionWeatherPageViewModel ViewModel
+        public MainWeatherViewModel ViewModel
         {
-            get => (BindingContext as OptionWeatherPageViewModel);
+            get => (BindingContext as MainWeatherViewModel);
             set
             {
                 BindingContext = value;
             }
         }
 
-        protected async override void OnAppearing()
+        public void CurrentLocationTapped(System.Object sender, System.EventArgs e)
         {
-            base.OnAppearing();
-            await CallApi();
+            (BindingContext as MainWeatherViewModel).CallCurrentLocationPageCommand.Execute(null);
         }
 
-        async Task CallApi()
+        public void PickCityElementTapped(System.Object sender, System.EventArgs e)
         {
-            //var apiResponse = RestService.For<IOpenWeatherApi>("https://api.openweathermap.org");
-
-            //var testWeather = await apiResponse.GetCurrentWeatherItemByCityName("London");                                                           
-
-            var apiResponse = RestService.For<IOpenWeatherApi>("https://api.openweathermap.org");
-
-            var testWeather = await apiResponse.GetHourlyWeatherItemByCityName("Dominican Republic");
-
-            
+            (BindingContext as MainWeatherViewModel).CallPickCityPageCommand.Execute(null);
         }
+
     }
 }

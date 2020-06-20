@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace CoolWeather.ViewModels
 {
-    public class StartMainPageViewModel : ViewModelBase
+    public class CurrentWeatherPageViewModel : ViewModelBase
     {
 
         private IPageService _pageService;
@@ -39,7 +39,7 @@ namespace CoolWeather.ViewModels
                 }
             }
         }
-        public StartMainPageViewModel(IPageService pageService)
+        public CurrentWeatherPageViewModel(IPageService pageService)
         {
             _pageService = pageService;
             _citiesRepository = new CitiesRepository();

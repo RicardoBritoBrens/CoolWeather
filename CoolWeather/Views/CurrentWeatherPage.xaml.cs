@@ -6,25 +6,25 @@ using Xamarin.Forms;
 
 namespace CoolWeather.Views
 {
-    public partial class StartMainPage : ContentPage
+    public partial class CurrentWeatherPage : ContentPage
     {
-        public StartMainPage()
+        public CurrentWeatherPage()
         {
             InitializeComponent();
             var pageService = new PageService();
-            ViewModel = new StartMainPageViewModel(pageService);
+            ViewModel = new CurrentWeatherPageViewModel(pageService);
         }
 
-        public StartMainPageViewModel ViewModel
+        public CurrentWeatherPageViewModel ViewModel
         {
-            get => BindingContext as StartMainPageViewModel;
+            get => BindingContext as CurrentWeatherPageViewModel;
             set => BindingContext = value;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            (BindingContext as StartMainPageViewModel).GetCitiesCommand.Execute(null);
+            (BindingContext as CurrentWeatherPageViewModel).GetCitiesCommand.Execute(null);
         }
     }
 }

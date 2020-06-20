@@ -27,6 +27,7 @@
     <Folder Include="Models\MockModels\" />
     <Folder Include="Extra\Navigation\" />
     <Folder Include="Repository\" />
+    <Folder Include="ViewModels\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />
