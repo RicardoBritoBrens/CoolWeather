@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "83777d88-5905-463f-88fa-f9c111b9baf1",
+		"name": "OpenWeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dates",
+			"item": [
+				{
+					"name": "https://api.openweathermap.org/data/2.5/weather?lat=62.461704&lon=-114.375327&APPID=f2c0de7ab5f443561b0b3c912644a37b",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openweathermap.org/data/2.5/weather?lat=62.461704&lon=-114.375327&APPID=f2c0de7ab5f443561b0b3c912644a37b",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "62.461704"
+								},
+								{
+									"key": "lon",
+									"value": "-114.375327"
+								},
+								{
+									"key": "APPID",
+									"value": "f2c0de7ab5f443561b0b3c912644a37b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "https://api.openweathermap.org/data/2.5/weather?id=3508796&APPID=f2c0de7ab5f443561b0b3c912644a37b",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.openweathermap.org/data/2.5/weather?id=3508796&APPID=f2c0de7ab5f443561b0b3c912644a37b",
+							"protocol": "https",
+							"host": [
+								"api",
+								"openweathermap",
+								"org"
+							],
+							"path": [
+								"data",
+								"2.5",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3508796"
+								},
+								{
+									"key": "APPID",
+									"value": "f2c0de7ab5f443561b0b3c912644a37b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
