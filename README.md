@@ -1,6 +1,6 @@
 # CoolWeather
 
-This repository hold all the code use to create a weather app using the OpenWeather Api
+This repository hold all the code use to create a weather app using the [OpenWeather Api](https://openweathermap.org/)
 
 ## Draft
 
