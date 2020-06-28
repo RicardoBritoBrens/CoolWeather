@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolWeather.iOS", "CoolWeat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoolWeather", "CoolWeather\CoolWeather.csproj", "{BD031AEA-8A53-4BD3-86A3-B176293018E5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03DDA43E-DAD0-4B65-810A-FEF517A12638}"
+	ProjectSection(SolutionItems) = preProject
+		CoolWeatherApp.drawio = CoolWeatherApp.drawio
+		CoolWeatherApp.jpg = CoolWeatherApp.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

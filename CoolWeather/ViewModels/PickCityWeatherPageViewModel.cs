@@ -1,20 +1,15 @@
-﻿using CoolWeather.Services.Navigation;
+﻿using System.ComponentModel;
+using CoolWeather.Services.Navigation;
 
 namespace CoolWeather.ViewModels
 {
-    public class PickCityWeatherPageViewModel : ViewModelBase
+    public class PickCityWeatherPageViewModel : INotifyPropertyChanged
     {
         private IPageService _pageService;
-        public int Temp
-        {
-            get => _temp;
-            set
-            {
-                _temp = value;
-                OnPropertyChanged();
-            }
-        }
-        private int _temp { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public int Temp { get; set; }
 
         public PickCityWeatherPageViewModel()
         {

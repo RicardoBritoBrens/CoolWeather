@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Resources>
         <ResourceDictionary>
+
             <Style x:Key="LabelOptionWeatherPageStyle" TargetType="Label">
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="FontSize" Value="18" />
@@ -20,6 +21,7 @@
                 <Setter Property="Source" Value="BackgroundImage.jpeg" />
                 <Setter Property="Aspect" Value="AspectFill" />
             </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
 

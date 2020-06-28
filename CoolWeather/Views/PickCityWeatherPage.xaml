@@ -108,7 +108,7 @@
                     <DataTemplate>
                         <pancake:PancakeView
                             Padding="0"
-                            BackgroundColor="DarkOrange"
+                            BackgroundColor="LightGray"
                             BackgroundGradientAngle="45"
                             BorderGradientAngle="5"
                             CornerRadius="10"

@@ -74,15 +74,8 @@
                                     VerticalOptions="CenterAndExpand" />
                             </StackLayout>
                         </pancake:PancakeView>
-
-                        <!--
-                            TODO:
-                            ADD SEARCH BAR
-                        -->
-
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-
             </CollectionView>
         </StackLayout>
     </ContentPage.Content>
