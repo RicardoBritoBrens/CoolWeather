@@ -58,7 +58,7 @@
       <Version>1.4.2</Version>
     </PackageReference>
     <PackageReference Include="Refit">
-      <Version>5.1.67</Version>
+      <Version>7.2.22</Version>
     </PackageReference>
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>3.0.3</Version>
